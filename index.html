@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            background-image: url('https://cdn.pixabay.com/photo/2015/07/05/10/18/tree-832079_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            /* height: 100%; */
+            background-repeat: no-repeat;
+            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        .weatherBox{
+            /* height: 60vh; */
+            width: 40%;
+            color: white;
+            /* From https://css.glass */
+/* From https://css.glass */
+background: rgba(20, 20, 20, 0.32);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.7px);
+-webkit-backdrop-filter: blur(3.7px);
+border: 1px solid rgba(20, 20, 20, 0.14);
+            display: flex;
+            border-radius: 20px;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            gap: 40px;
+            transition: height  0.9s ease;
+        }
+        .heading{
+            
+            margin-bottom: -10px;
+    color: white;
+    margin-top: 20px;
+        }
+        input,button{
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+        form{
+            position: relative;
+        }
+        .val{
+            
+            width: 63%;
+        }
+        input{
+            padding: 10px 50px;
+            width: 100%;
+        }
+        button{
+            background-color:transparent;
+            transition: 0.5s;
+            color: black;
+            border: transparent;
+            font-weight: 500;
+            font-size: 1.6rem;
+    position: absolute;
+    right: 8px;
+    bottom: 3px;
+    padding: 0;
+ 
+    width: 38px;
+            
+        }
+        button:hover{
+            font-size: 1.4rem;
+        }
+        :-ms-input-placeholder{
+            font-size: 1rem;
+        }
+       ::placeholder{
+        
+        font-size: 1rem;
+
+       }
+       img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        /* mix-blend-mode: color-burn; */
+        background-color: transparent;
+       }
+       .weatherdetail{
+        width: 100%;
+        display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    transition: height 1s ease;
+    /* position: relative; */
+       }
+       .details{
+        display: flex;
+        /* gap: 3rem;
+        width: 100%; */
+       }
+       .humidity{
+    font-size: 1.4rem;
+    bottom: 12px;
+    position: absolute;
+    left: 33px;
+}
+.windspeed{
+    font-size: 1.4rem;
+    bottom: 12px;
+    position: absolute;
+    right: 33px;
+}
+.degree{
+    /* margin-top: 1px; */
+    margin-top:5px ;
+    font-size: 4rem;
+    /* margin-bottom: 120px; */
+
+}
+.descBox{
+    margin-bottom: 115px;
+    text-align: center;
+
+}
+.desc{
+    /* font-size: 1.2rem; */
+    
+}
+.degree span{
+    font-size: 1.5rem;
+    position: absolute;
+}
+.cityname{
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.val{
+    margin-bottom: 20px;
+}
+.hide{
+    visibility: hidden;
+    height: 10px;
+
+}
+.show{
+    visibility: visible;
+    height: fit-content;
+    
+}
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+     
+        <div class="weatherBox">
+            <h1 class="heading">Weather App </h1>
+            <div class="val">
+                <form action="">
+                    <input type="search" name="search" id="val" placeholder="search" />
+                <button class="btn" type="submit">🔍</button>
+                <div class="weather">
+
+                </div>
+                </form>
+            </div>
+           <div class="">
+            <div class="weatherDetail hide">
+                <div class="cityname img">
+                    <h1 class="city"></h1>
+                    <!-- <img src="https://media.istockphoto.com/id/868643748/photo/cartoon-sun-emoji-isolated-on-white-background-sunshine-emoticon-3d-rendering.jpg?s=2048x2048&w=is&k=20&c=YM2udnD7V4XcdlmJL67NG48nMLa387epzhqtm1bX9Vo=" alt=""> -->
+                </div>
+               <div class="descBox">
+                <h1 class="degree">0</h1>
+                <div class="desc"><h1 class="description">haze</h1></div>
+               </div>
+                <div class="details">
+                   <div class="humidity">
+                    <i>💦</i>
+                    <p class="humid">0</p>
+                    <p>humidity</p>
+                   </div>
+                   <div class="windspeed">
+                    <i>💨</i>
+                    <p class="wind">0</p>
+                    <p>windspeed</p>
+                   </div>
+
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
